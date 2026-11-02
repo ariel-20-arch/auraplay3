@@ -1,0 +1,6 @@
+{
+  "name": "AURA STREAM",
+  "description": "Futuristic dark neon-orange music streaming application inspired by Spotify with real-time reactive audio visualizer, multi-genre catalog, and glassmorphism styling.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

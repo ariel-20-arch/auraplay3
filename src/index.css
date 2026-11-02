@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --bg-main: #050507;
+    --neon-orange: #ff5500;
+    --neon-orange-bright: #ff6a00;
+    --neon-glow: rgba(255, 85, 0, 0.4);
+    --glass-bg: rgba(14, 14, 20, 0.65);
+    --glass-border: rgba(255, 85, 0, 0.18);
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-main);
+    color: #f3f4f6;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: 'Outfit', sans-serif;
+  }
+
+  .font-mono-numbers {
+    font-family: 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Custom glowing pulse animations and neon borders */
+@keyframes neon-pulse {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(255, 85, 0, 0.35), 0 0 30px rgba(255, 85, 0, 0.15), inset 0 0 15px rgba(255, 85, 0, 0.2);
+    border-color: rgba(255, 85, 0, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 85, 0, 0.7), 0 0 60px rgba(255, 85, 0, 0.35), inset 0 0 25px rgba(255, 85, 0, 0.35);
+    border-color: rgba(255, 115, 0, 0.95);
+  }
+}
+
+@keyframes equalizer-bounce {
+  0%, 100% { height: 4px; }
+  50% { height: 18px; }
+}
+
+.animate-neon-pulse {
+  animation: neon-pulse 2.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-eq-1 { animation: equalizer-bounce 0.8s ease-in-out infinite; }
+.animate-eq-2 { animation: equalizer-bounce 1.1s ease-in-out infinite 0.2s; }
+.animate-eq-3 { animation: equalizer-bounce 0.65s ease-in-out infinite 0.4s; }
+.animate-eq-4 { animation: equalizer-bounce 0.95s ease-in-out infinite 0.15s; }
+
+/* Custom Sleek Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #07070b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 85, 0, 0.25);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 85, 0, 0.55);
+}
+
+/* Glassmorphism utility card */
+.glass-panel {
+  background: rgba(13, 13, 19, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 85, 0, 0.15);
+}
+
+.glass-panel-active {
+  background: rgba(26, 17, 13, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 85, 0, 0.5);
+  box-shadow: 0 0 20px rgba(255, 85, 0, 0.2);
+}
