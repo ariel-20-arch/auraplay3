@@ -44,6 +44,7 @@ import { FullscreenStage } from './components/FullscreenStage';
 import { DJControlsPopover } from './components/DJControlsPopover';
 import { StatsModal } from './components/StatsModal';
 import { applyThemeToDocument } from './utils/themePresets';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 export default function App() {
   // Theme Color State
@@ -1076,6 +1077,9 @@ export default function App() {
         onClose={() => setIsUploadOpen(false)}
         onTrackUploaded={handleTrackUploaded}
       />
+
+      {/* Vercel Speed Insights */}
+      <SpeedInsights />
     </div>
   );
 }
